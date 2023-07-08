@@ -17,5 +17,6 @@
         echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config
-        
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config #内网穿透FRPC
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config #内网穿透FRPS
         
