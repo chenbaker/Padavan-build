@@ -102,7 +102,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config
         else
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
