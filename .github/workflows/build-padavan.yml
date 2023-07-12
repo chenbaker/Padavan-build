@@ -57,60 +57,48 @@ jobs:
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
         ################################################################################################
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_MENTOHUST/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SSSERVER/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_ADBYBY/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_DROPBEAR/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENVPN/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SSSERVER/d' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
         if [ $KERNEL = "4.4" ] ; then
-        echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config
-        else
-        echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SFTP=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR=n" >> .config #DROPBEAR SSH
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_CADDYBIN=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_WYY=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
+        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=y" >> .config
+        else
+        echo "CONFIG_FIRMWARE_INCLUDE_SFTP=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR=n" >> .config #DROPBEAR SSH
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=y" >> .config
         fi
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
