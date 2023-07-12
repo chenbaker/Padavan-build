@@ -82,7 +82,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=y" >> .config
